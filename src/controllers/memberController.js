@@ -3,7 +3,7 @@ const Member = require("../models/Member")
 exports.getMembers = async (req, res) => {
     try {
         const members = await Member.find()
-        
+        .populate("ecclesiasticalProfile", "baptismDate baptizedBy notes ")
         res.json(members)
 
     } catch (error) {
@@ -14,12 +14,13 @@ exports.getMembers = async (req, res) => {
 exports.getMemberById = async (req, res) => {
     try{
         const member = await Member.findById(req.params.id)
-
+        .populate("ecclesiasticalProfile", "baptismDate baptizedBy notes ")
         if(!member) {
             return res.status(404).json({ message: "Membro não encontrado" })
         } 
 
         res.status(200).json(member)
+        
     } catch (error) {
             res.status(500).json({ error: error.message})
         }

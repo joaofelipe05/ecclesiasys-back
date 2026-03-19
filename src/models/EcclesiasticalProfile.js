@@ -23,7 +23,7 @@ const ecclesiasticalProfileSchema = new mongoose.Schema({
         trim: true,
         maxlenght: [150, "A origem da membresia pode ter no máximo 150 caracteres"]
     },
-    notes: {
+    c: {
         type: String,
         trim: true,
         maxlength: [500, "As observações devem conter no máximo 500 caracteres"]

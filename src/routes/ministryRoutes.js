@@ -19,6 +19,7 @@ router.put("/add-member/:id", ministryController.addMemberToMinistry)
 
 router.put("/remove-member/:id", ministryController.removeMemberFromMinistry)
 
+//passa o id do ministério
 router.get("/member/:id", ministryController.getMinistriesMembers)
 
 module.exports = router

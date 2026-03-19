@@ -43,6 +43,10 @@ const memberSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    ecclesiasticalProfile: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "EcclesiasticalProfile"
     }
 })
 

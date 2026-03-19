@@ -55,6 +55,7 @@ exports.createProfile = async (req, res) => {
             return res.status(500).json({message: "Este membro já possui perfil ecles."})
         }
         const profile = await EcclesiasticalProfile.create(req.body)
+        await Member.findByIdAndUpdate(member, {ecclesiasticalProfile: profile._id})
         
         const populatedProfile = await EcclesiasticalProfile.findById(profile._id)
         .populate("member", "name email phone status")

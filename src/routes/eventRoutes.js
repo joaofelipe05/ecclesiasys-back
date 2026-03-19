@@ -16,6 +16,7 @@ router.put("/:id", eventController.updateEvent)
 
 router.delete("/:id", eventController.deleteEvent)
 
+//id do evento na url - id do membro no body
 router.put("/add-participant/:id", eventController.addParticipantToEvent)
 
 router.put("/remove-participant/:id", eventController.removeParticipantFromEvent)
